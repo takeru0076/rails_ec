@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   }
   root to: 'pages#home'
   namespace :admin do
+    root to: 'pages#home'
     resources :products, only: %i[index show new create edit update]
+    resources :orders, only: %i[index create destroy]
   end
   scope module: :customer do
     resources :products, only: %i[index show]
