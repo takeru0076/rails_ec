@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     root to: 'pages#home'
     resources :products, only: %i[index show new create edit update]
     resources :orders, only: %i[index create destroy]
+    resources :customers, only: %i[index show update]
   end
   scope module: :customer do
     resources :products, only: %i[index show]
